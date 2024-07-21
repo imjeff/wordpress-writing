@@ -5,9 +5,6 @@
 <?php }; if (is_archive()) { ?>
 <h1 class="title"><?php the_archive_title(); ?></h1>
 <div class="intro">共有 <?php echo esc_html($wp_query->found_posts); ?> 篇文章</div>
-<?php }; if (is_search()) { ?>
-<h1 class="title"><?php printf( '搜索：%s', '' . get_search_query() . '' ); ?></h1>
-<div class="intro"><?php global $found_posts; printf( '共 %s 条搜索结果', $wp_query->found_posts ); ?><?php get_search_form(); ?></div>
 <?php } ?>
 <?php if ( have_posts() ) : ?>
 <?php while ( have_posts() ) : the_post();?>
@@ -18,7 +15,7 @@
 <?php if ( is_singular() ) { ?><div class="content"><?php the_content(); ?></div><?php } ?>
 </article>
 <?php endwhile; ?>
-<?php if (is_home() || is_archive() || is_search()) { ?>
+<?php if (is_home() || is_archive()) { ?>
 <?php if ( get_the_posts_pagination() ) : ?><div class="pages">
 <?php if ( get_previous_posts_link() ) : ?><?php previous_posts_link( '&nbsp;←&nbsp;' ); ?><?php endif; ?>
 <?php if ( get_next_posts_link() ) : ?><?php next_posts_link( '&nbsp;→&nbsp;' ); ?><?php endif; ?></div><?php endif; ?>
