@@ -32,6 +32,6 @@ $ul_open = true;
 endif;
 $previous_year = $year; $previous_month = $month;
 ?>
-<li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( $title_args ); ?>"><?php the_title_attribute( $title_args ); ?></a></li>
+<li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 <?php endforeach; ?>
 <?php get_footer(); ?>
